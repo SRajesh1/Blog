@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp'
+    'myapp',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,11 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',,
+     'corsheaders.middleware.CorsMiddleware'
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://your-frontend-domain.netlify.app",
 ]
 
 ROOT_URLCONF = 'myproject.urls'

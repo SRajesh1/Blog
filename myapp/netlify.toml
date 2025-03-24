@@ -1,0 +1,16 @@
+[build]
+publish = "dist"  # Ensure this points to the directory where your built frontend files are located
+command = "npm run build"  # The build command for your frontend
+
+[dev]
+command = "npm start"  # Command to start your development server
+
+[[redirects]]
+from = "/*"
+to = "/index.html"  # Corrected this line by adding quotes around the path
+status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
